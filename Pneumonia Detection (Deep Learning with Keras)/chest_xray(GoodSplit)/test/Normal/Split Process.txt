@@ -1,0 +1,2 @@
+Using the random renaming tools on Bulk Renaming, I randomly renamed all the Pneumonia and Normal photos.
+Then Split train:val:test 70:15:15
