@@ -24,7 +24,6 @@
   </component>
   <component name="JupyterTrust" id="6b414875-78d8-448f-bea9-f9e91f1c7bcc">
     <option name="files">
-      <option value="ModelImplementation.ipynb" />
       <option value="ModelRetrainer.ipynb" />
       <option value="NeuralNet.ipynb" />
     </option>
@@ -110,7 +109,7 @@
       <workItem from="1592892190256" duration="13115000" />
       <workItem from="1592964354332" duration="40850000" />
       <workItem from="1593319122913" duration="12588000" />
-      <workItem from="1593645164346" duration="14743000" />
+      <workItem from="1593645164346" duration="18676000" />
     </task>
     <servers />
   </component>
