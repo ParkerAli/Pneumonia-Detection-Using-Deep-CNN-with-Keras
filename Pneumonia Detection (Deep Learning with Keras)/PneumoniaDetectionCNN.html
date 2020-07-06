@@ -13088,7 +13088,7 @@ div#notebook {
 to see how they affect classification performance on the dataset to find a model with optimal predictive performance. 
 The focus is on thoroughness rather than computational efficiency. This is also why I haven't decided to implement 
 transfer learning even though it may have improved performance and training time.</p>
-<h3 id="The-Chest-X-ray-Dataset">The Chest X-ray Dataset<a class="anchor-link" href="#The-Chest-X-ray-Dataset">&#182;</a></h3><p>The dataset was acquired from Paul Mooney via Kaggle (<a href="https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia">https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia</a>) and consists of 5863 JPEG images (JPEG). It is split into 3 subfolders for training (5216 images), 
+<h3 id="The-Chest-X-ray-Dataset">The Chest X-ray Dataset<a class="anchor-link" href="#The-Chest-X-ray-Dataset">&#182;</a></h3><p>The dataset was acquired from Paul Mooney via Kaggle (<a href="https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia">https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia</a>) and consists of 5863 JPEG images. It is split into 3 subfolders for training (5216 images), 
 testing (624 images) and validation (16 images). Within each subfolder The images are either classed as 'NORMAL' or 
 'PNEUMONIA' in their own respective folders. While all the images were correctly classed, the dataset isn't perfectly clean 
 so more extreme classification rates mights be harder to achieve. Another aspect to account for is that 73% of the images 
@@ -13185,7 +13185,7 @@ section.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras.models</span> <span class="kn">import</span> <span class="n">Sequential</span>
@@ -13196,6 +13196,24 @@ section.</p>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>Using TensorFlow backend.
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -13210,7 +13228,7 @@ section.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">confusion_matrix</span>
@@ -13239,7 +13257,7 @@ section.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -13260,7 +13278,7 @@ section.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -13281,7 +13299,7 @@ section.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
@@ -13534,7 +13552,7 @@ work harder to classify items correctly.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The last layer does the classification. It is a single node and uses softmax activation for image classification for 
+<p>The last layer does the classification. It is a single node and uses sigmoid activation for image classification for 
 this binary case.</p>
 
 </div>
@@ -13561,7 +13579,7 @@ how we will be measuring its accuracy.</p>
 <ul>
 <li>We use binary binary crossentropy as the loss function because we are doing a binary classification.</li>
 <li>We use rmsprop as an optimization function because it is a suitable adaptive learning rate algorithm.</li>
-<li>We only use the accuracy metric because, for the purpose of gauging my network(s), it is adequate.</li>
+<li>We only use the accuracy metric because, for the purpose of gauging my network(s) training performance, it is adequate.</li>
 </ul>
 
 </div>
@@ -13757,7 +13775,7 @@ Found 880 images belonging to 2 classes.
 <li>steps_per_epoch=no_images//batch_size denotes how many steps the model takes to complete each epoch </li>
 <li>epochs is rather trivially, the number of epochs</li>
 <li>We set our validation data to the validation iterator</li>
-<li>The validation steps is calculated similarly to the step_per_epoch.</li>
+<li>The validation steps is calculated similarly to the steps_per_epoch.</li>
 </ul>
 
 </div>
@@ -13887,7 +13905,7 @@ no need to recompile it.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">load_weights</span><span class="p">(</span><span class="s1">&#39;Data and Resources/model_weights(M3E20).h5&#39;</span><span class="p">)</span>
